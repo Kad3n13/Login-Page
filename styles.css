@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  text-align: center;
+  background: url('https://cdn.pixabay.com/photo/2023/05/23/09/56/anime-8012380_1280.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+input {
+  padding: 2px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 4px;
+  font-size 1em;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color rgba(255,255,255,0.7);
+  background: background-color 0.3s ease:
+}
+button:hover {
+  background-color: rgba(178, 34, 52, 0.9), #B22234;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Red with 20% opacity */
+  z-index: -1;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  max-width: 400px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* White with 90% opacity */
+  transform: scale(1.05);
+}
+h1 {
+  color: #B22234;
+  text-align: center; /* Centers the title text */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Optional: Adjusts padding if needed */
+  display: inline-flex; /* Allows centering the elements inside the h1 */
+  align-items: center; /* Vertically aligns the content inside the h1 */
+}
+
+h1::before, h1::after {
+  content: "(Φ ω Φ )";
+  font-size: 0.7em;
+  margin: 0 5px; /* Adds a little margin on both sides of the emoticons */
+  white-space: nowrap;
+}
+
+h1::before {
+  content: "( =ノωヽ=) ";
+  color: #B22234
+}
+
+h1::after {
+  content: " ( =ヽωノ= )";
+  color: white
+}
+
+
+.message {
+  font-size: 1.2em;
+  color: #B22234; /* Crimson (U.S. flag red tone) */
+  margin-bottom: 20px;
+}
+
+.card-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-links a {
+  text-decoration: none;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(178, 34, 52, 0.7); /* Crimson with 70% opacity */
+  transition: background-color 0.3s ease;
+}
+
+.card-links a:hover {
+  background-color: rgba(178, 34, 52, 0.9); /* Crimson with 90% opacity */
+}
+
+.card-links a:active {
+  background-color: rgba(139, 0, 0, 0.7); /* Dark red with 70% opacity */
+}
+
+.card-links a:focus {
+  outline: 2px solid #B22234;
+}
+
+.card-links a:visited {
+  color: #ffffff;
+}
+
+section {
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.6); /* White with 60% opacity */
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+section:target {
+  display: block;
+}
+
+section:hover {
+  transform: skewX(5deg);
+}
