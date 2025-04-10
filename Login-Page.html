@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="card" id="greeting-card">
+      <h1>Create Account</h1>
+      <form id="loginForm" method="post">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="confirm" placeholder="Confirm Password" required />
+        <button type="submit">Register</button>
+      </form>
+
+      <p class="message">
+        Wishing you all the happiness and joy on your special day!
+      </p>
+
+      <div class="card-links">
+        <a href="#login" class="login">Login</a>
+        <!-- Guest button that triggers guest login -->
+        <a href="#" class="guest" onclick="guestLogin()">Guest</a>
+      </div>
+    </div>
+
+    <section id="login">
+      <h2>Login</h2>
+      <p>Redirect to login page or show login form here.</p>
+    </section>
+
+    <section id="guest">
+      <h2>Sending to next page</h2>
+      <p>Login into User: Guest</p>
+    </section>
+
+    <script>
+      function guestLogin() {
+        // Fill in the guest credentials
+        document.querySelector('input[name="username"]').value = 'Guest';
+        document.querySelector('input[name="password"]').value = 'Password';
+        document.querySelector('input[name="confirm"]').value = 'Password';  // Confirm password should also match the password
+        
+        // Perform a check before redirecting
+        const username = document.querySelector('input[name="username"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+        const confirmPassword = document.querySelector('input[name="confirm"]').value;
+
+        // Check if the passwords match
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return;
+        }
+
+        // Check if username and password match the expected 'guest' credentials
+        if (username === 'Guest' && password === 'Password') {
+          // Redirect to the second part of the website
+          window.location.href = 'https://google.com';  // Example URL for the second part of the site
+        } else {
+          // If invalid, show an alert
+          alert('Invalid username or password');
+        }
+      }
+
+      // Prevent form submission for regular login
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the form from submitting normally
+        
+        // Get the values of the inputs
+        const username = document.querySelector('input[name="username"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+        const confirmPassword = document.querySelector('input[name="confirm"]').value;
+        
+        // Check if the passwords match
+        if (password !== confirmPassword) {
+          alert('Passwords do not match!');
+          return;
+        }
+        
+        // Check if username and password match the expected credentials
+        if (username === 'Guest' && password === 'Password') {
+          // Redirect to the second part of the website
+          window.location.href = 'https://google.com';  // Example URL for the second part of the site
+        } else {
+          // If invalid, show an alert
+          alert('Invalid username or password');
+        }
+      });
+    </script>
+  </body>
+</html>
